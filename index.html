@@ -5,66 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Collector Game</title>
-    <link rel="stylesheet"  href="./assets/css/reset.css">
-    <link rel="stylesheet"  href="./assets/css/style.css"> 
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/images.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 </head>
+
 <body>
- 
+    <div class="container">
     <div id="display"></div>
-    <div id="buttons"></div>
+    
+    <!--CRYSTAL COLLECTOR GAME TITLE AT TOP OF SCREEN-->
+    <div class="alert alert-primary" role="alert">
+            Crystal Collector
+          </div>
+    
+    <!--IMAGE LINK FOR ALL 4 CRYSTALS-->
 
-    <!--jquery link-->
+
+
+
+    <!--//INSTRUCTIONS FOR GAME LISTED FOR PLAYER TO SEE -->
+    <!--ROW THAT INSTRUCTIONS AND "MATCH THIS VALUE" APPEAR ON-->
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="jumbotron">
+                <h1 class="display-4">Instructions</h1>
+                <p class="lead">You will be given a random number at the start of the game.</p>
+                <p class="lead">There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                <p class="lead">You win the game by matching your total score to a random number, and you lose the game if your total score goes above the random number.</p>
+                <p class="lead">The value of each crystal is hidden from you until you click on it.</p>
+                <p class="lead">Each time when the game starts, the game will change the values of each crystal.</p>
+            </div>
+        </div>
+
+        <!--COLUMN FOR "MATCH THIS VALUE-->
+        <div class="col-lg-3">
+            <div class="jumbotron">
+                <h1 class="display-4">Match this value: <span id=randomNum>0</span></h1>
+            </div>
+        </div>
+    </div> <!--END OF ROW TAG-->
+
+    <!--ROW FOR CRYSTAL BUTTONS-->
+    <div class="row">
+        <div class="jumbotron" style="width:100%">
+        <div class="col-lg-8">
+            <div class="jumbotron" style="background-color:beige; width:100%; float:left;">
+                <h1 class="display-10">Click any one of the crystals</h1>
+                <div class="imagesdiv"></div>
+            </div>
+        </div>
+        
+        <!--EMPTY COLUMN WITH A WIDTH OF 1-->
+        <div class="col-lg-1"></div>
+
+            <!--WINS AND LOSSES COLUMN WITH A WIDTH OF 3-->
+            <div class="col-lg-3">
+                <div class="jumbotron" style="background-color:beige; width:100%; float:left;">
+                    <h1 class="display-10">Wins: <span id=wins>0</span></h1>
+                    <h1 class="display-10">Losses: <span id=losses>0</span></h1>
+                </div>
+            </div>
+
+            <!--YOUR TOTAL SCORE IS-->
+    </div>
+    </div>
+
+
+</div>
+    <!--END OF ROW FOR CRYSTAL BUTTONS-->
+
+</div> <!--END OF ROW FOR WHOLE PAGE-->
+</div>
+
+
+  <!--jQuery-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script type="text/javascript">
-            $(document).ready(function() {
-                //Crystal Buttons
-
-                    //Variable named crystalBtn equal to $("<button>")
-                    var crystalBtn = $("<button>");
-
-                    //Classes for crystalBtn
-                    crystalBtn.addClass("")
-
-            }
-                    //Crystals Collector title
-                    <div class="row" style="background-color:cadetblue; color:black; width:20%;">Crystals Collector!</div>
-
-
-                    <div class="jumbotron" style="width:20%; margin-top:170px; margin-left:5%; color:darkblue; background-color:skyblue">
-                        <h1>Instructions:</h1>
-                        <p>You will be given a random number at the start of the game.</p>
-                        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-                        <p>You win the game by matching your total score to a random number, and you lose the game if your total score goes above the random number</p>
-                        <p>The value of each crystal is hidden from you until you click on it.</p>
-                        <p>Each time when the game starts, the game will change the values of each crystal.</p>
-                    </div>
-
-                    //Random # + Wins and Losses total score
-                    <div>
-                    </div>
-
-                    //Crystal pictures
-                    <div class="row">
-                        <div class="col-md-6" style="background-color: skyblue; width:50%;">Random Number:</div>
-                        <div class="col-md-6" style="background-color: skyblue">Wins:<span></span></div>
-                    </div>
-
-                    //Total score title
-                    <div class="row">
-                        <div class="col-md-6" style="background-color: tomato">Total Score:</div>
-                    </div>
-
-                    //Score value
-                    <div>
-                        <div class="col-md-6" style="background-color:yellow"><span>0</span></div>
-                    </div>
-                
-
-  </script>
+    <script src="assets/javascript/game.js"></script>
+   
 </body>
 </html>
