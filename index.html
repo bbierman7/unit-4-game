@@ -7,91 +7,46 @@
     <title>Crystal Collector Game</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <link rel="stylesheet" href="assets/images.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/images.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="display"></div>
-    
-    <!--CRYSTAL COLLECTOR GAME TITLE AT TOP OF SCREEN-->
-    <div class="alert alert-primary" role="alert">
-            Crystal Collector
-          </div>
-    
-    <!--IMAGE LINK FOR ALL 4 CRYSTALS-->
-
-
-
-
-    <!--//INSTRUCTIONS FOR GAME LISTED FOR PLAYER TO SEE -->
-
-    <!--ROW THAT INSTRUCTIONS AND "MATCH THIS VALUE" APPEAR ON-->
-
-        <div class="row">
-            <div id="Instructions" class="col-lg-6">
-                <div class="jumbotron">
-                    <h1 class="display-4">Instructions</h1>
-                    <p>You will be given a random number at the start of the game.</p>
-                    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-                    <p>You win the game by matching your total score to a random number, and you lose the game if your total score goes above the random number.</p>
-                    <p>The value of each crystal is hidden from you until you click on it.</p>
-                    <p>Each time when the game starts, the game will change the values of each crystal.</p>
-                </div>
-            </div>
-
-            <!--COLUMN FOR "MATCH THIS VALUE-->
-            <div id="Match" class="col-lg-3">
-                    <div class="jumbotron" style="margin-right:20%">
-                        <h1 class="display-10" style="margin-left: 10%;">Match this value: <span id=randomNum>0</span></h1>
-                    </div>
-            </div>
-        </div> <!--END OF ROW TAG-->
-
-        <!--CLASS FOR CRYSTAL BUTTONS, WINS/LOSSES, AND TOTAL SCORE-->
-        <!--ROW FOR CRYSTAL BUTTONS-->
-        <div class="row">
-                    <div id="clickCrystals" class="jumbotron;" style="width:100%">
-                        <div class="jumbotron" style="background-color:beige; width:100%; float:left;">
-                            <h1 class="display-10">Click any one of the crystals:</h1>
-                            <div class="imagesdiv"></div>
-                        </div>
-                    </div>
-                
-            <!--EMPTY COLUMN WITH A WIDTH OF 1-->
-                <div id="winsAndLosses" class="col-lg-4">
-                    <!--WINS AND LOSSES COLUMN WITH A WIDTH OF 3-->
-                    <!-- <div class="col-lg-4"> -->
-                    <div class="jumbotron; col-lg-4" style="background-color:beige; width:100%; float:left;">
-                        <h1 class="display-10">Wins: <span id=wins>0</span></h1>
-                        <h1 class="display-10">Losses: <span id=losses>0</span></h1>
-                    </div>
-        </div>
-
-            <!--YOUR TOTAL SCORE-->
-            <div class="row">
-                <div id="totalScore" class="col-lg-4">
-                    <!--YOUR TOTAL SCORE-->
-                    <div class="jumbotron; col-lg-4" style="background-color:beige; width:100%; float:left;">
-                        <h1 class="display-10">Your total score: <span id=totalScore>0</span></h1>
-                    </div>
-                </div>
-
-            </div>
-
-
-    <!-- </div> -->
-        <!--END OF ROW FOR CRYSTAL BUTTONS-->
- <!--END OF ROW FOR WHOLE PAGE-->
-</div>
-
-
-  <!--jQuery-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/game.js"></script>
-   
+    
+    <div id="display"></div>
+
+    <div class="container">
+    <div class="header">
+    <h1>Instructions</h1>
+    </div>
+
+    <div class="instructions">
+    <p>You will be given a random number at the start of the game.</p>
+    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+    <p>You win the game by matching your total score to a random number, and you lose the game if your total score goes above the random number.</p>
+    <p>The value of each crystal is hidden from you until you click on it.</p>
+    <p>Each time when the game starts, the game will change the values of each crystal.</p>
+    </div>
+
+    <br>
+    <br>
+    <div class="game-stats">
+    <p>Your total score is: <span id="totalScore">0</span></p>
+    <p>Random Number: <span id="randomNum">0</span></p>
+    <p>Wins: <span id="wins">0</span></p>
+    <p>Losses:<span id="losses">0</span></p>
+    </div>
+
+    <!--Crystal buttons-->
+    <div class="crystal-set">
+        <p>Click on any one of the crystals</p>
+        <img id="crystal1" class="crystals" src="assets/images/crystal-1.png">
+        <img id="crystal2" class="crystals" src="assets/images/crystal-2.png">
+        <img id="crystal3" class="crystals" src="assets/images/crystal-3.png">
+        <img id="crystal4" class="crystals" src="assets/images/crystal-4.png">
+    </div>
+</div>
+
 </body>
-</html>
